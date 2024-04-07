@@ -133,7 +133,7 @@ void loop() {
         Serial.print(" Step:");
         Serial.println(randStep);
       }
-
+i++;
       if (i >= endPort) {
 
         switchON = false;
@@ -143,10 +143,10 @@ void loop() {
           Serial.println(i);
         }
 
-        i = startPort - 1;  // because i++ will add 1
+        i = startPort ;
         lastSwitchTime = millis() + pause;
       }
-      i++;
+      
     }
 
 
@@ -167,7 +167,7 @@ void loop() {
         Serial.print(" Step:");
         Serial.println(randStep);
       }
-
+i++;
       if (i >= endPort) {
 
         switchON = true;
@@ -176,10 +176,10 @@ void loop() {
           Serial.print(" All Ports LOW:");
           Serial.println(i);
         }
-        i = startPort - 1;  // because i++ will add 1
+        i = startPort; 
         lastSwitchTime = millis() + pause;
       }
-      i++;
+      
     }
   }
 }
