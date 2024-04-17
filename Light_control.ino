@@ -43,7 +43,7 @@ void setup() {
     delay(250);
   }
 
-  for (int i = startPort; i < endPort; i++) {
+  for (int i = startPort; i <= endPort; i++) {
     pinMode(i, OUTPUT);
   }
 
@@ -94,7 +94,7 @@ void loop() {
   testSwitch = digitalRead(switchPort);
 
   if (testSwitch) {
-    for (int i = startPort; i < endPort; i++) {
+    for (int i = startPort; i <= endPort; i++) {
       digitalWrite(i, HIGH);
       testSwitchWasOn = true;
 
@@ -107,7 +107,7 @@ void loop() {
   } else {  // normal operation
 
     if (testSwitchWasOn) {
-      for (int i = startPort; i < endPort; i++) {
+      for (int i = startPort; i <= endPort; i++) {
         digitalWrite(i, LOW);
         testSwitchWasOn = false;
         lastSwitchTime = millis() + pause;
@@ -134,7 +134,7 @@ void loop() {
         Serial.println(randStep);
       }
 i++;
-      if (i >= endPort) {
+      if (i > endPort) {
 
         switchON = false;
         switchOFF = true;
@@ -168,7 +168,7 @@ i++;
         Serial.println(randStep);
       }
 i++;
-      if (i >= endPort) {
+      if (i > endPort) {
 
         switchON = true;
         switchOFF = false;
